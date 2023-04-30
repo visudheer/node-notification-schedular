@@ -15,6 +15,7 @@ const job = scheduleJob("*/10 * * * *", async () => {
   await axios
     .get(process.env.APOD_API + process.env.APOD_API_KEY)
     .then((data) => {
+      console.log("Get space info from APOD");
       axios
         .post(process.env.DB_URL + process.env.DB_PATH, {
           title: data.data.title,
