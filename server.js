@@ -9,11 +9,12 @@ dotenv.config();
 
 //"0 6 * * *"
 
-const job = scheduleJob("*/10 * * * * *", async () => {
+const job = scheduleJob("0 6 * * *", async () => {
+  console.log("Before getting data from APOD API");
   await axios
     .get(process.env.APOD_API + process.env.APOD_API_KEY)
     .then((data) => {
-      console.log("Get space info from APOD");
+      console.log("After calling APOD API & Uploading to Firebase Database");
       axios
         .post(process.env.DB_URL + process.env.DB_PATH, {
           title: data.data.title,
