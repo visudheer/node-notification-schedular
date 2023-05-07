@@ -9,7 +9,7 @@ dotenv.config();
 
 //"0 6 * * *"
 
-const job = scheduleJob("0 6 * * *", async () => {
+const job = scheduleJob("* * * * *", async () => {
   console.log("Before getting data from APOD API");
   await axios
     .get(process.env.APOD_API + process.env.APOD_API_KEY)
