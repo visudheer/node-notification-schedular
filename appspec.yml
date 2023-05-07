@@ -1,0 +1,5 @@
+version: 0.1
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/user/express/v1_domain/node-notification-schedular
